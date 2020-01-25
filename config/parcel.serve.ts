@@ -54,7 +54,6 @@ export const serve = async ({ isProductMode } = { isProductMode: false }) => {
     // Collect Server Handles
     let handles = {
         httpServer: http.createServer(expressInstance),
-        httpsServer: https.createServer(testCertificate, expressInstance),
     }
 
     // Binding a Port
@@ -62,9 +61,6 @@ export const serve = async ({ isProductMode } = { isProductMode: false }) => {
     Logger.debug(`🚧  HTTP & HTTPS Server Running...`)
     handles.httpServer.listen(httpPort, () => {
         Logger.debug(`🚧  - http://localhost:${httpPort}`)
-    })
-    handles.httpsServer.listen(httpsPort, () => {
-        Logger.debug(`🚧  - https://localhost:${httpsPort}`)
     })
 
     let publicIp: string | undefined = undefined
@@ -75,7 +71,6 @@ export const serve = async ({ isProductMode } = { isProductMode: false }) => {
         console.log('')
         Logger.debug(`🚧  External HTTP & HTTPS Server Address`)
         Logger.debug(`🚧  - http://${publicIp}:${httpPort}`)
-        Logger.debug(`🚧  - https://${publicIp}:${httpsPort}`)
     }
 
     return handles

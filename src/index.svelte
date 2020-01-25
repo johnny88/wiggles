@@ -4,4 +4,4 @@
         c: string = 'Parcel'
 </script>
 
-<h1>{a} + {b} + {c}</h1>
+<div class="text-xl">{a} {b}</div>
