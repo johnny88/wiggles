@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import exif from 'exif-js';
 import cn from 'classnames';
 
@@ -33,15 +32,11 @@ const getFileUrl = (file: File) =>
 export default () => {
   const [image, setImage] = useState<string>('');
   const [orientation, setOrientation] = useState<number>(0);
-  const [started, setStarted] = useState<boolean>(false);
 
   const uploadInput = useRef<HTMLInputElement>(null);
 
-  const history = useHistory();
-
   useEffect(() => {
     uploadInput?.current?.click();
-    setStarted(true);
   }, [uploadInput]);
 
   const handleImageChange = async (

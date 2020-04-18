@@ -7,9 +7,10 @@ import * as serviceWorker from './serviceWorker';
 import { StoreContext } from 'redux-react-hook';
 import { store } from './store';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { fas } from '@fortawesome/pro-solid-svg-icons';
+import { far } from '@fortawesome/pro-regular-svg-icons';
 
-library.add(faHome, faPlus, faUser);
+library.add(far, fas);
 declare global {
   interface Window {
     db: any;

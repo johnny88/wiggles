@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
+import { faCameraRetro } from '@fortawesome/pro-solid-svg-icons';
 import { SnackBar, CircleButton } from '~/components';
 import { constants } from '../store';
 

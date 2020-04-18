@@ -3,7 +3,7 @@ import { Modal, Button, Toolbar } from '~/components';
 import { constants } from '../reducer';
 import { deleteImages } from '../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faTrash } from '@fortawesome/pro-solid-svg-icons';
 
 export const SelectToolbar = ({ selected, dispatch, selectMode }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
