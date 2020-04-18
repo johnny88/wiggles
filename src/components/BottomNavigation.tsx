@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import '~/components/transitions';
 
 export const BottomNavigation = () => (
-  <div className="z-10 bg-secondary flex items-center justify-center w-full py-2 border-t-2 border-primary pin-b px-12">
+  <div className="z-10 bg-gray-100 flex items-center justify-center w-full py-3 border-t-2 border-purple-600 pin-b px-12">
     <div className="flex items-center justify-around flex-shrink w-full max-w-lg">
       <NavButton to="/" icon="home" text="Feed" />
       <UploadButton />
@@ -24,7 +24,7 @@ const NavButton = ({ icon, text, to }: NavButtonProps) => (
   <NavLink
     exact={to === '/'}
     to={to}
-    activeClassName="text-primary"
+    activeClassName="text-purple-600"
     className="flex flex-col items-center px-4 text-tertiary no-underline color-transition outline-none"
   >
     <FontAwesomeIcon
