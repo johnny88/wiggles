@@ -1,55 +1,40 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconLookup } from '@fortawesome/pro-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
+import { IconLookup, IconName } from '@fortawesome/pro-solid-svg-icons';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 import '~/components/transitions';
 
 export const BottomNavigation = () => (
-  <div className="z-10 bg-gray-100 flex items-center justify-center w-full py-3 border-t-2 border-purple-600 pin-b px-12">
-    <div className="flex items-center justify-around flex-shrink w-full max-w-lg">
-      <NavButton
-        to="/"
-        icon={{ prefix: 'far', iconName: 'home' }}
-        text="Feed"
-      />
-      <UploadButton />
-      <NavButton
-        to="/profile"
-        icon={{ prefix: 'far', iconName: 'user' }}
-        text="Profile"
-      />
+  <div className="z-10 bg-gray-100 flex items-center justify-center w-full border-t-2 border-purple-500 pin-b">
+    <div className="flex items-center justify-center flex-shrink w-full">
+      <NavButton to="/" iconName="home" text="Feed" />
+      <button>
+        <Icon icon={{ prefix: 'far', iconName: 'plus-circle' }} />
+      </button>
+      <NavButton to="/profile" iconName="user" text="Profile" />
     </div>
   </div>
 );
 
 type NavButtonProps = {
-  icon: IconLookup;
+  iconName: IconName;
   text: string;
   to: string;
 };
 
-const NavButton = ({ icon, text, to }: NavButtonProps) => (
-  <NavLink
-    exact={to === '/'}
-    to={to}
-    activeClassName="text-purple-400"
-    className="flex flex-col items-center px-4 text-gray-400 no-underline color-transition outline-none"
-  >
-    <FontAwesomeIcon
-      className="pb-1 h-12"
-      role="button"
-      size="3x"
-      icon={icon}
-    />
-  </NavLink>
-);
-
-const UploadButton = () => {
+const NavButton = ({ iconName, text, to }: NavButtonProps) => {
+  const match = useRouteMatch(to);
   return (
-    <div className="text-purple-800 border-4 p-2 border-purple-800 h-12 w-12 flex items-center justify-center rounded-full">
-      <div className="pt-1">
-        <FontAwesomeIcon className="pb-1" role="button" size="2x" icon="plus" />
-      </div>
-    </div>
+    <NavLink exact={to === '/'} to={to}>
+      <Icon
+        icon={{ prefix: match?.isExact ? 'fas' : 'far', iconName: iconName }}
+      />
+    </NavLink>
   );
 };
+
+const Icon = ({ icon }: { icon: IconLookup }) => (
+  <div className="flex text-purple-500 h-12 px-4 items-center justify-center rounded-full">
+    <FontAwesomeIcon className="pb-1" role="button" size="2x" icon={icon} />
+  </div>
+);
