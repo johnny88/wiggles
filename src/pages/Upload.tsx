@@ -77,7 +77,7 @@ export const Upload = () => {
         <div className="flex flex-col h-full">
           <div className="flex-auto overflow-y-scroll">
             <div className="p-4 space-y-4">
-              {urls.map((url, idx) => (
+              {urls.reverse().map((url, idx) => (
                 <ImagePreview key={`preview-${idx}`} url={url} idx={idx} />
               ))}
             </div>
