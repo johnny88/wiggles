@@ -1,5 +1,3 @@
-import Button from "./Button.svelte";
-import Loading from "./Loading.svelte";
-import DarkModeToggle from "./DarkModeToggle.svelte";
-
-export { Button, Loading, DarkModeToggle };
+export * from "./Loading";
+export * from "./Button";
+export * from "./Logo";
