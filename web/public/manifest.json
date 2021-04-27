@@ -1,0 +1,21 @@
+{
+  "name": "Wiggle Room",
+  "version": "2.0.0",
+  "manifest_version": 2,
+  "background_color": "#D1D5DB",
+  "theme_color": "#5D3E9D",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "display": "standalone",
+  "start_url": "/?homescreen=1"
+}

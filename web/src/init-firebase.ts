@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-export const firebaseApp = initializeApp({
+initializeApp({
   apiKey: "AIzaSyDcx5xDlQS3ixEFF8mESoxUzTk9f56uQhA",
   authDomain: "wiggles-f0bd9.firebaseapp.com",
   databaseURL: "https://wiggles-f0bd9.firebaseio.com",

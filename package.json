@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/JohnPangalos/wiggles#readme",
   "workspaces": [
-    "./*"
+    "web",
+    "functions"
   ],
   "dependencies": {
     "feather-icons": "^4.28.0",

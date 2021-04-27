@@ -73,3 +73,4 @@ build
 node_module
 
 functions/lib
+.yarn
